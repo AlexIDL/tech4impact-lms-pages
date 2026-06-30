@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tech4Impact</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Inter', sans-serif; background: #F9F9F9; }
+
+.hero { background: #1C4F8C; padding: 52px 40px 48px; text-align: center; }
+.eyebrow { display: inline-flex; align-items: center; gap: 8px; background: rgba(245,200,66,0.15); border: 1px solid rgba(245,200,66,0.4); border-radius: 20px; padding: 5px 16px; margin-bottom: 20px; }
+.eyebrow-dot { width: 5px; height: 5px; background: #F5C842; border-radius: 50%; }
+.eyebrow span { color: #F5C842; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
+.hero h1 { color: #ffffff; font-size: 42px; font-weight: 700; letter-spacing: -1px; margin-bottom: 14px; }
+.hero-sub { color: #ffffff; font-size: 15px; line-height: 1.65; max-width: 520px; margin: 0 auto 32px; }
+.cta-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 40px; }
+.btn-primary { background: #F5C842; color: #1C3A6B; font-size: 14px; font-weight: 700; padding: 11px 24px; border-radius: 6px; border: none; cursor: pointer; text-decoration: none; display: inline-block; }
+.btn-ghost { background: transparent; color: #ffffff; font-size: 14px; padding: 11px 24px; border-radius: 6px; border: 2px solid rgba(255,255,255,0.4); cursor: pointer; text-decoration: none; display: inline-block; }
+.stats-row { display: flex; justify-content: center; padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.15); flex-wrap: wrap; }
+.stat { padding: 0 32px; border-right: 1px solid rgba(255,255,255,0.15); text-align: center; }
+.stat:last-child { border-right: none; }
+.stat-num { color: #F5C842; font-size: 24px; font-weight: 700; line-height: 1; margin-bottom: 5px; }
+.stat-label { color: #ffffff; font-size: 12px; }
+
+.yellow-bar { height: 4px; background: #F5C842; }
+
+.intro-section { background: #ffffff; padding: 48px 40px; text-align: center; border-bottom: 1px solid #eee; }
+.section-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #2C6DB5; margin-bottom: 10px; }
+.intro-section h2 { font-size: 22px; font-weight: 700; color: #0f1f3d; margin-bottom: 14px; }
+.intro-section p { font-size: 14px; color: #444; line-height: 1.75; max-width: 580px; margin: 0 auto; }
+
+.track-section { background: #F9F9F9; padding: 48px 0 0; }
+.track-header { text-align: center; padding: 0 40px 28px; }
+.track-header h2 { font-size: 22px; font-weight: 700; color: #0f1f3d; margin-bottom: 8px; margin-top: 8px; }
+.track-header p { font-size: 14px; color: #555; }
+.track-grid { display: grid; grid-template-columns: 1fr 1fr; }
+.track-card { padding: 36px 36px 40px; }
+.track-card.hei { background: #EAF1FA; border-top: 5px solid #1C4F8C; border-right: 1px solid #d0dff0; }
+.track-card.vet { background: #FFF9E6; border-top: 5px solid #F5C842; }
+.track-badge { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 4px 12px; border-radius: 20px; margin-bottom: 14px; }
+.track-badge.hei { background: #1C4F8C; color: #ffffff; }
+.track-badge.vet { background: #F5C842; color: #5a3c00; }
+.track-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 10px; line-height: 1.3; }
+.track-card.hei h3 { color: #0C3366; }
+.track-card.vet h3 { color: #5a3c00; }
+.track-destination { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 12px; display: flex; align-items: center; gap: 6px; }
+.track-destination.hei { color: #1C4F8C; }
+.track-destination.vet { color: #7a5200; }
+.track-card p { font-size: 13px; line-height: 1.7; margin-bottom: 26px; }
+.track-card.hei p { color: #1e3a5f; }
+.track-card.vet p { color: #5a3c00; }
+.track-cta { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; padding: 10px 20px; border-radius: 6px; border: none; cursor: pointer; text-decoration: none; }
+.track-cta.hei { background: #1C4F8C; color: #ffffff; }
+.track-cta.vet { background: #F5C842; color: #5a3c00; }
+
+.outcomes-section { background: #ffffff; padding: 48px 32px; border-top: 1px solid #eee; border-bottom: 1px solid #eee; }
+.outcomes-header { text-align: center; margin-bottom: 28px; }
+.outcomes-header h2 { font-size: 20px; font-weight: 700; color: #0f1f3d; margin-top: 8px; }
+.outcomes-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.outcomes-col-label { font-size: 10px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; padding: 5px 14px; border-radius: 20px; margin-bottom: 12px; display: inline-block; }
+.outcomes-col-label.hei { background: #1C4F8C; color: #ffffff; }
+.outcomes-col-label.vet { background: #F5C842; color: #5a3c00; }
+.outcome-item { display: flex; align-items: flex-start; gap: 10px; padding: 11px 13px; background: #F9F9F9; border-radius: 8px; margin-bottom: 8px; border: 1px solid #eee; }
+.outcome-icon { width: 32px; height: 32px; border-radius: 7px; display: flex; align-items: center; justify-content: center; font-size: 15px; flex-shrink: 0; color: #fff; }
+.outcome-icon.hei { background: #1C4F8C; }
+.outcome-icon.vet { background: #F5C842; color: #5a3c00; }
+.outcome-text { font-size: 12px; font-weight: 600; color: #222; line-height: 1.4; padding-top: 3px; }
+
+.steps-section { background: #F9F9F9; padding: 48px 32px; }
+.steps-header { text-align: center; margin-bottom: 28px; }
+.steps-header h2 { font-size: 20px; font-weight: 700; color: #0f1f3d; margin-top: 8px; }
+.steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.step-card { background: #ffffff; border: 1px solid #e5e5e5; border-radius: 10px; padding: 24px 20px; text-align: center; }
+.step-num { width: 34px; height: 34px; border-radius: 50%; background: #1C4F8C; color: #ffffff; font-size: 14px; font-weight: 700; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px; }
+.step-card h4 { font-size: 14px; font-weight: 700; color: #0f1f3d; margin-bottom: 6px; }
+.step-card p { font-size: 12px; color: #555; line-height: 1.55; }
+
+.partners-section { background: #ffffff; border-top: 1px solid #eee; padding: 40px 32px 32px; }
+.partners-label { text-align: center; font-size: 11px; color: #aaa; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 24px; }
+.partners-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-bottom: 28px; }
+.partner-tile { border: 1px solid #eee; border-radius: 8px; padding: 10px 8px; display: flex; align-items: center; justify-content: center; background: #fafafa; min-height: 60px; text-decoration: none; }
+.partner-tile img { max-height: 38px; max-width: 100%; object-fit: contain; }
+.partner-tile span { font-size: 11px; font-weight: 600; color: #555; text-align: center; line-height: 1.4; }
+.eu-strip { display: flex; align-items: center; justify-content: center; gap: 12px; padding-top: 24px; border-top: 1px solid #eee; }
+.eu-flag { width: 36px; height: 24px; background: #003399; border-radius: 3px; display: flex; align-items: center; justify-content: center; }
+.eu-stars { color: #FFCC00; font-size: 8px; letter-spacing: -1px; }
+.eu-text { font-size: 11px; color: #888; }
+
+.footer { background: #1C4F8C; padding: 18px 32px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+.footer-left { font-size: 11px; color: #ffffff; opacity: 0.6; }
+.footer-links { display: flex; gap: 18px; }
+.footer-links a { font-size: 11px; color: #ffffff; opacity: 0.65; text-decoration: none; }
+
+@media (max-width: 700px) {
+  .track-grid, .outcomes-grid, .steps-grid { grid-template-columns: 1fr; }
+  .partners-grid { grid-template-columns: repeat(2, 1fr); }
+  .track-card.hei { border-right: none; }
+  .hero h1 { font-size: 32px; }
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="eyebrow">
+    <div class="eyebrow-dot"></div>
+    <span>Erasmus+ &middot; Grant Agreement 101246580</span>
+    <div class="eyebrow-dot"></div>
+  </div>
+  <h1>Tech4Impact</h1>
+  <p class="hero-sub">Social entrepreneurship education for the next generation of tech innovators &mdash; built for ICT, AI, and DeepTech students and professionals across Europe.</p>
+  <div class="cta-row">
+    <a class="btn-primary" href="https://tech4impact-lms.eu/lms/login/index.php" target="_parent">Create your account</a>
+    <a class="btn-ghost" href="https://tech4impact.eu" target="_blank">About the project &nearr;</a>
+  </div>
+  <div class="stats-row">
+    <div class="stat"><div class="stat-num">10</div><div class="stat-label">Topics</div></div>
+    <div class="stat"><div class="stat-num">2</div><div class="stat-label">Learning tracks</div></div>
+    <div class="stat"><div class="stat-num">9</div><div class="stat-label">Partner organisations</div></div>
+    <div class="stat"><div class="stat-num">Free</div><div class="stat-label">Open access</div></div>
+  </div>
+</div>
+
+<div class="yellow-bar"></div>
+
+<div class="intro-section">
+  <div class="section-eyebrow">What is Tech4Impact</div>
+  <h2>Where technical expertise meets social purpose</h2>
+  <p>Tech4Impact is an Erasmus+ project connecting higher education institutions and vocational training providers across Europe to develop a new generation of socially conscious tech entrepreneurs. Whether you're a student or a professional looking to reskill, this platform is your starting point.</p>
+</div>
+
+<div class="track-section">
+  <div class="track-header">
+    <div class="section-eyebrow">Choose your track</div>
+    <h2>Which path fits you best?</h2>
+    <p>Two distinct curricula, built around where you want to go.</p>
+  </div>
+  <div class="track-grid">
+    <div class="track-card hei">
+      <span class="track-badge hei">HEI track</span>
+      <h3>For university students in ICT, AI, and DeepTech</h3>
+      <div class="track-destination hei">&rarr; Start a social venture</div>
+      <p>Build the entrepreneurial mindset and skills to launch your own tech-driven social venture. This track prepares you to identify social problems, design impactful solutions, and lead the organisations that deliver them.</p>
+      <a class="track-cta hei" href="#">Explore the HEI track &rarr;</a>
+    </div>
+    <div class="track-card vet">
+      <span class="track-badge vet">VET track</span>
+      <h3>For professionals reskilling or upskilling</h3>
+      <div class="track-destination vet">&rarr; Work within a social venture</div>
+      <p>Develop the practical skills to contribute and grow inside social enterprises. This track is built around the realities of working within the social economy &mdash; applying digital and entrepreneurial competencies in real organisational contexts.</p>
+      <a class="track-cta vet" href="#">Explore the VET track &rarr;</a>
+    </div>
+  </div>
+</div>
+
+<div class="outcomes-section">
+  <div class="outcomes-header">
+    <div class="section-eyebrow">What you'll learn</div>
+    <h2>Skills built for your track and your context</h2>
+  </div>
+  <div class="outcomes-grid">
+    <div class="outcomes-col">
+      <div class="outcomes-col-label hei">HEI track outcomes</div>
+      <div class="outcome-item">
+        <div class="outcome-icon hei">&#9733;</div>
+        <div class="outcome-text">Social entrepreneurship theory and venture creation</div>
+      </div>
+      <div class="outcome-item">
+        <div class="outcome-icon hei">&#9881;</div>
+        <div class="outcome-text">AI and DeepTech applications for social good</div>
+      </div>
+      <div class="outcome-item">
+        <div class="outcome-icon hei">&#9776;</div>
+        <div class="outcome-text">Impact measurement frameworks and reporting</div>
+      </div>
+      <div class="outcome-item">
+        <div class="outcome-icon hei">&#9776;</div>
+        <div class="outcome-text">Stakeholder engagement and co-design methods</div>
+      </div>
+    </div>
+    <div class="outcomes-col">
+      <div class="outcomes-col-label vet">VET track outcomes</div>
+      <div class="outcome-item">
+        <div class="outcome-icon vet">&#9733;</div>
+        <div class="outcome-text">Social economy structures and business models</div>
+      </div>
+      <div class="outcome-item">
+        <div class="outcome-icon vet">&#9881;</div>
+        <div class="outcome-text">Digital skills for the social economy workforce</div>
+      </div>
+      <div class="outcome-item">
+        <div class="outcome-icon vet">&#9776;</div>
+        <div class="outcome-text">Practical impact tools for real enterprise contexts</div>
+      </div>
+      <div class="outcome-item">
+        <div class="outcome-icon vet">&#9776;</div>
+        <div class="outcome-text">Recognised competencies aligned to EntreComp</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="steps-section">
+  <div class="steps-header">
+    <div class="section-eyebrow">How it works</div>
+    <h2>Three steps to get started</h2>
+  </div>
+  <div class="steps-grid">
+    <div class="step-card">
+      <div class="step-num">1</div>
+      <h4>Create your account</h4>
+      <p>Register for free. Open to students and professionals across Europe &mdash; no institution required.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">2</div>
+      <h4>Choose your track</h4>
+      <p>Select the HEI or VET curriculum based on your background and where you want to go.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">3</div>
+      <h4>Start learning</h4>
+      <p>Work through topics and modules at your own pace. Earn a certificate on completion.</p>
+    </div>
+  </div>
+</div>
+
+<div class="partners-section">
+  <div class="partners-label">Consortium partners</div>
+  <div class="partners-grid">
+    <a class="partner-tile" href="https://www.uop.gr" target="_blank"><span>University of the Peloponnese</span></a>
+    <a class="partner-tile" href="https://infinitivitydesignlabs.com" target="_blank"><span>Infinitivity Design Labs</span></a>
+    <a class="partner-tile" href="https://www.metabolic.nl/" target="_blank"><span>Metabolic</span></a>
+    <a class="partner-tile" href="https://www.pixel-online.net/" target="_blank"><span>Pixel Firenze</span></a>
+    <a class="partner-tile" href="https://vilniustech.lt/linkmenu-fabrikas/" target="_blank"><span>Vilnius Tech</span></a>
+    <a class="partner-tile" href="https://ktu.edu" target="_blank"><span>Kaunas University of Technology</span></a>
+    <a class="partner-tile" href="https://co2gether.gr/" target="_blank"><span>Co2gether</span></a>
+    <a class="partner-tile" href="https://connectbrussels.eu/" target="_blank"><span>Connect Brussels</span></a>
+    <a class="partner-tile" href="https://www.sustainlivwork.eu/" target="_blank"><span>NASMB / SustainLivWork</span></a>
+  </div>
+  <div class="eu-strip">
+    <div class="eu-flag"><span class="eu-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
+    <span class="eu-text">Co-funded by the European Union &middot; Erasmus+ Grant Agreement 101246580</span>
+  </div>
+</div>
+
+<div class="footer">
+  <span class="footer-left">&copy; 2025&ndash;2028 Tech4Impact &middot; Erasmus+ KA220</span>
+  <div class="footer-links">
+    <a href="#">About</a>
+    <a href="#">Privacy</a>
+    <a href="#">Contact</a>
+    <a href="https://tech4impact.eu" target="_blank">tech4impact.eu &nearr;</a>
+  </div>
+</div>
+
+</body>
+</html>
