@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Section 2: Staying Committed to Your Cause</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/t4i-base.css">
+<style>
+  /* ── S2-specific styles ── */
+
+  /* Two-column comparison table */
+  .comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 18px 0 24px;
+    font-size: 13px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .comparison-table thead tr th {
+    padding: 12px 16px;
+    text-align: left;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .comparison-table thead tr th:first-child { background: #2C6DB5; color: #ffffff; }
+  .comparison-table thead tr th:last-child  { background: #c0392b; color: #ffffff; }
+
+  .comparison-table tbody tr { border-bottom: 1px solid #eee; }
+  .comparison-table tbody tr:last-child { border-bottom: none; }
+  .comparison-table tbody tr:nth-child(even) { background: #F9F9F9; }
+
+  .comparison-table tbody td {
+    padding: 10px 16px;
+    color: #333;
+    line-height: 1.55;
+    vertical-align: top;
+  }
+
+  /* Numbered steps list */
+  .steps-list {
+    list-style: none;
+    padding: 0;
+    margin: 16px 0 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .steps-list li { display: flex; gap: 14px; align-items: flex-start; }
+
+  .step-num {
+    background: #1C4F8C;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 700;
+    min-width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .step-text { font-size: 13px; line-height: 1.65; color: #333; }
+  .step-text strong { color: #1C4F8C; }
+
+  /* Assessment: divider + fuller header variant */
+  .assessment-divider {
+    border: none;
+    border-top: 3px solid #F5C842;
+    margin: 44px 0 0;
+  }
+
+  .assessment-header {
+    background: #1C4F8C;
+    padding: 20px 40px;
+    border-radius: 0;
+    margin-top: 0;
+  }
+
+  .assessment-header-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #F5C842;
+    margin-bottom: 4px;
+  }
+
+  .assessment-header h2 {
+    font-size: 19px;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 0;
+  }
+
+  .assessment-content {
+    padding: 28px 40px 40px;
+    max-width: 820px;
+  }
+
+  .assessment-intro {
+    font-size: 14px;
+    line-height: 1.75;
+    color: #333;
+    margin-bottom: 28px;
+  }
+
+  /* Scenario cards */
+  .scenario-card {
+    border: 1px solid #dde6f4;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 28px;
+  }
+
+  .scenario-card-header {
+    background: #EAF1FA;
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .scenario-num {
+    background: #1C4F8C;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 700;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .scenario-card-title { font-size: 14px; font-weight: 700; color: #1C4F8C; }
+
+  .scenario-card-body { padding: 18px 20px; }
+
+  .scenario-card-body p {
+    font-size: 13px;
+    line-height: 1.7;
+    color: #444;
+    margin-bottom: 14px;
+  }
+
+  .scenario-prompt {
+    font-size: 13px;
+    font-weight: 600;
+    color: #0f1f3d;
+    border-top: 1px solid #e0eaf5;
+    padding-top: 14px;
+    margin-top: 6px;
+    margin-bottom: 0;
+    line-height: 1.6;
+  }
+
+  .word-limit {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #777;
+  }
+
+  @media (max-width: 640px) {
+    .assessment-header  { padding: 16px 20px; }
+    .assessment-content { padding: 20px 20px 32px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ─── Section Header ─── -->
+<div class="section-header">
+  <div class="section-title">Section 2: Staying Committed to Your Cause</div>
+  <div class="section-meta">
+    <div class="meta-pill"><strong>Time:</strong> 15 minutes</div>
+    <div class="meta-pill"><strong>Track:</strong> HEI &amp; VET</div>
+  </div>
+</div>
+
+<!-- ─── Objectives ─── -->
+<div class="objectives-bar">
+  <h3>By the end of this section, you will be able to:</h3>
+  <ul>
+    <li>Distinguish between healthy and obsessive passion and explain the difference</li>
+    <li>Describe what resilience is and identify at least two habits that help build it</li>
+    <li>Explain how the SharedTable team used resilience and adaptability to turn a setback into progress</li>
+  </ul>
+</div>
+
+<!-- ─── Main Content ─── -->
+<div class="content">
+
+  <div class="scenario-box">
+    <div class="scenario-label">The first &ldquo;no&rdquo;</div>
+    <p>Ana, Jonas and Mira visit ten local shops to ask if they would participate in their social venture. One says &ldquo;yes&rdquo;, while another says &ldquo;maybe later.&rdquo; Eight others say no.</p>
+    <p>Jonas wants to stop. &ldquo;Maybe this wasn&rsquo;t a good idea after all,&rdquo; she says.</p>
+    <p>This is a very common reaction for entrepreneurs when facing resistance to their idea. Many social enterprises reach this point and their founders have to decide whether to continue. Three competences can help here: <strong>passion</strong>, <strong>resilience</strong> and <strong>adaptability</strong>.</p>
+  </div>
+
+  <h2 class="heading">Passion: why you care</h2>
+
+  <p>Passion means caring deeply about your cause. For Ana, Jonas and Mira, it is the thought of families going without food while good food is thrown away. Passion gives you energy and a reason to continue when the work, and times, are hard.</p>
+
+  <p>But not all passion is the same. Researchers describe two kinds (Vallerand et al., 2003).</p>
+
+  <table class="comparison-table">
+    <thead>
+      <tr>
+        <th>Healthy passion</th>
+        <th>Passion that consumes you</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>You choose to do the work.</td>
+        <td>You feel you must do it, whatever the cost.</td>
+      </tr>
+      <tr>
+        <td>It fits in with the rest of your life.</td>
+        <td>It takes away from your sleep, friends and other duties.</td>
+      </tr>
+      <tr>
+        <td>You can listen when others disagree.</td>
+        <td>You find it hard to hear criticism.</td>
+      </tr>
+      <tr>
+        <td>Setbacks are disappointing, but you recover.</td>
+        <td>Setbacks feel like a personal disaster.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>You can probably see how one might be beneficial when starting or working in a social venture while the other might be detrimental. Take a moment and think about your own passions. Do you find yourself leaning one way or the other?</p>
+
+  <h2 class="heading">Resilience: recovering from adversity</h2>
+
+  <p>Resilience is the ability to recover and keep going after a setback, problem or failure. Some people mistakenly think that resilient people are simply &ldquo;tough&rdquo;, but being tough is just a small aspect of being resilient. In fact, being resilient is never about ignoring problems or hiding feelings. Rather, it&rsquo;s about facing those problems, working through your emotions and still deciding to move forward.</p>
+
+  <p>This is backed by research showing that resilience is a learned competence, not an innate ability (Masten, 2001).</p>
+
+  <h3 class="subheading">Five habits that help develop resilience</h3>
+
+  <ul class="steps-list">
+    <li>
+      <div class="step-num">1</div>
+      <div class="step-text"><strong>Name the problem.</strong> &ldquo;Eight shops said no&rdquo; is the reality of the situation, but that is not the same as &ldquo;We failed&rdquo;.</div>
+    </li>
+    <li>
+      <div class="step-num">2</div>
+      <div class="step-text"><strong>Look for information in the setback.</strong> Why did the shops say &ldquo;no&rdquo;? You might be able to find a consistent reason and fix it.</div>
+    </li>
+    <li>
+      <div class="step-num">3</div>
+      <div class="step-text"><strong>Break the next step into something small.</strong> Setbacks can lead to knee-jerk reactions as emotion takes over from logic. Slow things down and make your next step an incremental one, not a life-changing one.</div>
+    </li>
+    <li>
+      <div class="step-num">4</div>
+      <div class="step-text"><strong>Ask for support.</strong> Talk to trusted advisors, mentors and teammates. Getting the opinion from someone removed from the emotional aspect of a failure can help you avoid rash decisions.</div>
+    </li>
+    <li>
+      <div class="step-num">5</div>
+      <div class="step-text"><strong>Remember your reason.</strong> Ground yourself by remembering why you got involved in a social venture to begin with.</div>
+    </li>
+  </ul>
+
+  <h3 class="subheading">Back to the team</h3>
+
+  <p>All three members of the team are disappointed with the results but decide to turn the &ldquo;no&rdquo;s into a positive. Ana goes back to the shops and asks why they said no. Most say the same thing: they are worried about the legal consequences if someone gets ill from the donated food.</p>
+
+  <p>It turns out the problem was not their idea, but a clear, fixable one. The team takes time to research local food ordinances and finds a rule that protects food donors from liability. They print out the ordinance and return to the stores; four more shops agree to participate.</p>
+
+  <div class="key-concept">
+    <p>Resilience did not mean the team could not feel disappointed &mdash; they clearly were. Yet instead of letting that disappointment overwhelm them, they took steps that allowed them to work through it and turn the situation around. Competences go up and down. You may feel particularly resilient one day and less so on another. What is key is having a set of steps to take, trusted people to confide in, and the ability to ground yourself in why you joined a social venture to begin with.</p>
+  </div>
+
+</div><!-- /content -->
+
+<!-- ─── Assessment ─── -->
+<hr class="assessment-divider">
+
+<div class="assessment-header">
+  <div class="assessment-header-label">Formative Assessment &mdash; Section 2</div>
+  <h2>Your turn</h2>
+</div>
+
+<div class="assessment-content">
+
+  <p class="assessment-intro">Now it is your turn to apply what you learned. Read through the two scenarios below and write a short response showing how you would approach each situation. There are no right or wrong answers &mdash; this is your opportunity to apply what you learned to real social venture situations.</p>
+
+  <!-- Scenario 1 -->
+  <div class="scenario-card">
+    <div class="scenario-card-header">
+      <div class="scenario-num">1</div>
+      <div class="scenario-card-title">Dealing with a setback</div>
+    </div>
+    <div class="scenario-card-body">
+      <p>Your team&rsquo;s first day as a social enterprise is not going well. The truck that was supposed to pick up the first food delivery is late and the shop has already thrown the food away. Worse, the shop owner &mdash; who needed a lot of convincing to participate in the first place &mdash; is now openly second-guessing your team&rsquo;s ability to deliver on its promises. Everyone involved, including your team, feels disappointed.</p>
+      <p class="scenario-prompt">What would you do, as a member of this team, in the next 24 hours? You must name one of the five resilience habits in your response.</p>
+      <span class="word-limit">50&ndash;100 words</span>
+    </div>
+  </div>
+
+  <!-- Scenario 2 -->
+  <div class="scenario-card">
+    <div class="scenario-card-header">
+      <div class="scenario-num">2</div>
+      <div class="scenario-card-title">Controlling your passion</div>
+    </div>
+    <div class="scenario-card-body">
+      <p>Three weeks after the first pickup, Shared Table is working. Mira is now working on the app every night, sometimes until 2am. Because of this, she has started missing classes and has not seen her friends for weeks. When Jonas suggests she schedule some time for herself, Mira says, &ldquo;Nobody cares about this as much as I do. Do not worry about me, I am fine.&rdquo;</p>
+      <p class="scenario-prompt">You are Jonas. What would you say or do to help Mira find a better work&ndash;life balance? What do you notice about her passion?</p>
+      <span class="word-limit">50&ndash;100 words</span>
+    </div>
+  </div>
+
+</div><!-- /assessment-content -->
+
+</body>
+</html>
