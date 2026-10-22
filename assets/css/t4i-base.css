@@ -1,0 +1,502 @@
+/*
+ * t4i-base.css
+ * Tech4Impact LMS — shared stylesheet for all module section pages
+ * Hosted: https://alexidl.github.io/tech4impact-lms-pages/assets/css/t4i-base.css
+ *
+ * Brand tokens
+ *   Navy      #1C4F8C
+ *   Mid Blue  #2C6DB5
+ *   Yellow    #F5C842
+ *   Blue Tint #EAF1FA
+ *
+ * All section-specific component classes (e.g. .behaviour-grid, .match-table,
+ * .comparison-table, .scenario-card) stay in the individual HTML file.
+ * Only classes used by two or more sections live here.
+ */
+
+/* ─── Reset ─────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ─── Base ───────────────────────────────────────────────── */
+body {
+  font-family: 'Inter', sans-serif;
+  background: #ffffff;
+  color: #1a1a1a;
+}
+
+/* ─── Section header ─────────────────────────────────────── */
+.section-header {
+  background: #1C4F8C;
+  padding: 28px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.section-title {
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+
+.section-meta {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.meta-pill {
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 20px;
+  padding: 5px 14px;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.meta-pill strong { color: #F5C842; }
+
+/* ─── Objectives bar ─────────────────────────────────────── */
+.objectives-bar {
+  background: #EAF1FA;
+  border-left: 4px solid #1C4F8C;
+  padding: 16px 40px;
+}
+
+.objectives-bar h3 {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: #1C4F8C;
+  margin-bottom: 10px;
+}
+
+.objectives-bar ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.objectives-bar ul li {
+  font-size: 13px;
+  color: #1e3a5f;
+  padding-left: 20px;
+  position: relative;
+  line-height: 1.5;
+}
+
+.objectives-bar ul li::before {
+  content: '\2192';
+  position: absolute;
+  left: 0;
+  color: #1C4F8C;
+  font-weight: 700;
+}
+
+/* ─── Main content wrapper ───────────────────────────────── */
+.content {
+  padding: 36px 40px;
+}
+
+/* ─── Scenario / narrative box ───────────────────────────── */
+.scenario-box {
+  background: #F9F9F9;
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  padding: 24px 28px;
+  margin-bottom: 36px;
+}
+
+.scenario-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: #2C6DB5;
+  margin-bottom: 12px;
+}
+
+.scenario-box p {
+  font-size: 14px;
+  line-height: 1.75;
+  color: #333;
+  margin-bottom: 12px;
+}
+
+.scenario-box p:last-child { margin-bottom: 0; }
+
+/* ─── Section headings ───────────────────────────────────── */
+h2.heading {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0f1f3d;
+  margin-top: 32px;
+  margin-bottom: 14px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #EAF1FA;
+}
+
+h3.subheading {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1C4F8C;
+  margin-top: 24px;
+  margin-bottom: 10px;
+}
+
+/* ─── Body text ──────────────────────────────────────────── */
+p {
+  font-size: 14px;
+  line-height: 1.75;
+  color: #333;
+  margin-bottom: 16px;
+}
+
+/* ─── Bullet list ────────────────────────────────────────── */
+.bullet-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.bullet-list li {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #333;
+  padding-left: 22px;
+  position: relative;
+}
+
+.bullet-list li::before {
+  content: '\2022';
+  position: absolute;
+  left: 0;
+  color: #1C4F8C;
+  font-weight: 700;
+  font-size: 16px;
+  top: 1px;
+}
+
+.bullet-list li strong { color: #0f1f3d; }
+
+/* ─── Key concept callout ────────────────────────────────── */
+.key-concept {
+  background: #EAF1FA;
+  border-left: 4px solid #1C4F8C;
+  border-radius: 0 8px 8px 0;
+  padding: 16px 20px;
+  margin: 20px 0 28px;
+}
+
+.key-concept p {
+  font-size: 14px;
+  color: #1e3a5f;
+  margin-bottom: 0;
+  line-height: 1.7;
+}
+
+/* ─── Activity box ───────────────────────────────────────── */
+.activity-box {
+  background: #FFF9E6;
+  border: 2px solid #F5C842;
+  border-radius: 10px;
+  padding: 24px 28px;
+  margin-top: 36px;
+}
+
+.activity-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: #7a5200;
+  margin-bottom: 6px;
+}
+
+.activity-box h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #5a3c00;
+  margin-bottom: 14px;
+}
+
+.activity-box p {
+  font-size: 14px;
+  color: #5a3c00;
+  margin-bottom: 14px;
+  line-height: 1.7;
+}
+
+.activity-cta {
+  display: inline-block;
+  background: #F5C842;
+  color: #5a3c00;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 10px 22px;
+  border-radius: 6px;
+  text-decoration: none;
+  margin-bottom: 20px;
+}
+
+.activity-cta:hover { background: #e6b830; }
+
+.considerations {
+  background: rgba(255,255,255,0.65);
+  border-radius: 8px;
+  padding: 16px 18px;
+  margin-bottom: 14px;
+}
+
+.considerations h4 {
+  font-size: 12px;
+  font-weight: 700;
+  color: #7a5200;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.considerations ul {
+  list-style: none;
+  padding: 0;
+}
+
+.considerations ul li {
+  font-size: 13px;
+  color: #5a3c00;
+  padding-left: 16px;
+  position: relative;
+  margin-bottom: 7px;
+  line-height: 1.55;
+}
+
+.considerations ul li::before {
+  content: '\2022';
+  position: absolute;
+  left: 0;
+  color: #c9a000;
+  font-weight: 700;
+}
+
+.return-note {
+  font-size: 13px;
+  color: #7a5200;
+  font-style: italic;
+  margin-bottom: 0;
+}
+
+/* ─── Divider ────────────────────────────────────────────── */
+.divider {
+  border: none;
+  border-top: 2px solid #F5C842;
+  margin: 36px 0;
+}
+
+/* ─── Assessment block (compact style — S3–S6) ───────────── */
+.assessment-header {
+  background: #1C4F8C;
+  border-radius: 8px 8px 0 0;
+  padding: 14px 20px;
+  margin-top: 36px;
+}
+
+.assessment-header h2 {
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.assessment-body {
+  border: 1px solid #ddd;
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  padding: 24px 24px 28px;
+}
+
+.assessment-body h3 {
+  font-size: 14px;
+  font-weight: 700;
+  color: #0f1f3d;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+.assessment-body h3:first-child { margin-top: 0; }
+
+.assessment-body p {
+  font-size: 13px;
+  color: #444;
+  margin-bottom: 12px;
+  line-height: 1.7;
+}
+
+/* ─── Multiple-choice list ───────────────────────────────── */
+.mc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.mc-list li {
+  font-size: 13px;
+  color: #444;
+  padding-left: 20px;
+  position: relative;
+  line-height: 1.6;
+}
+
+.mc-list li::before {
+  content: attr(data-label);
+  position: absolute;
+  left: 0;
+  font-weight: 600;
+  color: #2C6DB5;
+}
+
+.answer-note {
+  font-size: 12px;
+  color: #777;
+  font-style: italic;
+  margin-top: 4px;
+}
+
+/* ─── Numbered steps (counter-based) ────────────────────── */
+.neg-steps {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 24px;
+  counter-reset: neg-counter;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.neg-steps li {
+  counter-increment: neg-counter;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #333;
+  padding-left: 36px;
+  position: relative;
+}
+
+.neg-steps li::before {
+  content: counter(neg-counter);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 24px;
+  height: 24px;
+  background: #1C4F8C;
+  color: #ffffff;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ─── Competence table (S1) ──────────────────────────────── */
+.competence-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0 8px;
+  font-size: 13px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.competence-table thead tr { background: #1C4F8C; }
+
+.competence-table thead th {
+  padding: 12px 16px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.competence-table tbody tr { border-bottom: 1px solid #eee; }
+.competence-table tbody tr:last-child { border-bottom: none; }
+.competence-table tbody tr:nth-child(even) { background: #F9F9F9; }
+
+.competence-table tbody td {
+  padding: 10px 16px;
+  color: #333;
+  line-height: 1.5;
+}
+
+.competence-table tbody td:first-child {
+  font-weight: 600;
+  color: #1C4F8C;
+  white-space: nowrap;
+}
+
+.table-note {
+  font-size: 12px;
+  color: #777;
+  font-style: italic;
+  margin-top: 10px;
+  margin-bottom: 28px;
+  line-height: 1.6;
+}
+
+/* ─── Character cards (S1) ───────────────────────────────── */
+.character-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin: 20px 0 24px;
+}
+
+.character-card {
+  background: #F9F9F9;
+  border: 1px solid #e5e5e5;
+  border-top: 3px solid #1C4F8C;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.character-name {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1C4F8C;
+  margin-bottom: 8px;
+}
+
+.character-card p {
+  font-size: 12px;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+/* ─── Responsive ─────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .section-header    { padding: 20px; }
+  .objectives-bar    { padding: 14px 20px; }
+  .content           { padding: 24px 20px; }
+  .section-title     { font-size: 18px; }
+  .character-grid    { grid-template-columns: 1fr; }
+}
