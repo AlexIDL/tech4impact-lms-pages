@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Section 3: Making Decisions in an Uncertain Environment</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/t4i-base.css">
+<style>
+  /* ── S3-specific styles ── */
+
+  /* Scenario + image two-column layout */
+  .scenario-image-row {
+    display: flex;
+    gap: 24px;
+    align-items: stretch;
+    margin-bottom: 36px;
+  }
+
+  .scenario-image-row__text {
+    flex: 0 0 56%;
+    margin-bottom: 0;
+  }
+
+  .scenario-image-row__img {
+    flex: 0 0 calc(44% - 24px);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .scenario-image-row__img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    border-radius: 10px;
+  }
+
+  @media (max-width: 640px) {
+    .scenario-image-row { flex-direction: column; }
+    .scenario-image-row__text,
+    .scenario-image-row__img { flex: none; width: 100%; }
+    .scenario-image-row__img { height: 260px; }
+  }
+
+  /* Three-column type table */
+  .type-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0 20px;
+    font-size: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .type-table thead tr { background: #1C4F8C; }
+
+  .type-table thead th {
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #ffffff;
+  }
+
+  .type-table tbody tr { border-bottom: 1px solid #eee; }
+  .type-table tbody tr:last-child { border-bottom: none; }
+  .type-table tbody tr:nth-child(even) { background: #F9F9F9; }
+
+  .type-table tbody td {
+    padding: 10px 16px;
+    color: #333;
+    line-height: 1.55;
+  }
+
+  .type-table tbody td:first-child {
+    font-weight: 700;
+    color: #1C4F8C;
+    white-space: nowrap;
+  }
+
+  /* Risk table */
+  .risk-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0 20px;
+    font-size: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .risk-table thead tr { background: #2C6DB5; }
+
+  .risk-table thead th {
+    padding: 11px 16px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #ffffff;
+  }
+
+  .risk-table tbody tr { border-bottom: 1px solid #eee; }
+  .risk-table tbody tr:last-child { border-bottom: none; }
+  .risk-table tbody tr:nth-child(even) { background: #F9F9F9; }
+
+  .risk-table tbody td {
+    padding: 10px 16px;
+    color: #333;
+    line-height: 1.55;
+  }
+
+  .risk-table tbody td:first-child { color: #0f1f3d; }
+
+  /* Badges */
+  .badge {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 600;
+  }
+
+  .badge-high   { background: #fde8e8; color: #b91c1c; }
+  .badge-medium { background: #fef3c7; color: #92400e; }
+  .badge-low    { background: #d1fae5; color: #065f46; }
+
+  /* Arrow bullet list */
+  .response-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .response-list li {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #333;
+    padding-left: 22px;
+    position: relative;
+  }
+
+  .response-list li::before {
+    content: '\2192';
+    position: absolute;
+    left: 0;
+    color: #2C6DB5;
+    font-weight: 700;
+  }
+
+  .response-list li strong { color: #0f1f3d; }
+
+  /* Three-questions callout (mid-blue border) */
+  .three-questions {
+    background: #EAF1FA;
+    border-left: 4px solid #2C6DB5;
+    border-radius: 0 8px 8px 0;
+    padding: 16px 20px;
+    margin: 16px 0 24px;
+  }
+
+  .three-questions ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .three-questions ul li {
+    font-size: 16px;
+    color: #1e3a5f;
+    padding-left: 20px;
+    position: relative;
+    line-height: 1.6;
+    font-weight: 500;
+  }
+
+  .three-questions ul li::before {
+    content: '\2022';
+    position: absolute;
+    left: 0;
+    color: #1C4F8C;
+    font-weight: 700;
+  }
+</style>
+</head>
+<body>
+
+<div class="section-header">
+  <div class="section-title">Section 3: Making Decisions in an Uncertain Environment</div>
+  <div class="section-meta">
+    <div class="meta-pill"><strong>Time:</strong> 15 minutes</div>
+    <div class="meta-pill"><strong>Track:</strong> HEI &amp; VET</div>
+  </div>
+</div>
+
+<div class="objectives-bar">
+  <h3>By the end of this section, you will be able to:</h3>
+  <ul>
+    <li>Distinguish between facts, assumptions and opinions when evaluating information</li>
+    <li>Identify and assess risks using likelihood and seriousness</li>
+    <li>Explain what adaptability means and how it differs from simply changing your mind</li>
+  </ul>
+</div>
+
+<div class="content">
+
+  <div class="scenario-image-row">
+    <div class="scenario-box scenario-image-row__text">
+      <div class="scenario-label">A big offer</div>
+      <p>SharedTable is growing. One day, a large supermarket calls saying they would like to donate all of their unsold food, five days a week.</p>
+      <p>Ana is excited. Jonas is worried. Mira asks: &ldquo;Is this too good to be true?&rdquo;</p>
+      <p>The team has a big decision to make, but there is still a lot they do not know. Do they have enough drivers to handle the increased volume? What if the kitchen can&rsquo;t handle that much food daily? What happens if the supermarket changes its mind in a month?</p>
+      <p>Social enterprises often face decisions like this &mdash; where information is incomplete and conditions can change. This is where three competences can help: <strong>critical thinking, risk management and adaptability</strong>.</p>
+    </div>
+    <div class="scenario-image-row__img">
+      <img src="../../assets/img/sharedtable-team.jpg" alt="The SharedTable team working together around a table" />
+    </div>
+  </div>
+
+  <h2 class="heading">Critical Thinking: What do we really know?</h2>
+
+  <p>Critical thinking means questioning information before you accept it. A simple way to start is to separate three kinds of statements.</p>
+
+  <table class="type-table">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>What it is</th>
+        <th>Example</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Fact</td>
+        <td>Something you can check and verify</td>
+        <td>&ldquo;The supermarket sent a list: 40kg of unsold food last week.&rdquo;</td>
+      </tr>
+      <tr>
+        <td>Assumption</td>
+        <td>Something you believe but have not yet verified</td>
+        <td>&ldquo;The kitchen can use all of this extra food.&rdquo;</td>
+      </tr>
+      <tr>
+        <td>Opinion</td>
+        <td>A personal view</td>
+        <td>&ldquo;This is the best offer we will ever get.&rdquo;</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>Most bad decisions are not caused by missing facts. They happen because people treat assumptions as facts. Before you decide, ask yourself:</p>
+
+  <div class="three-questions">
+    <ul>
+      <li>What do we know for sure?</li>
+      <li>What are we assuming?</li>
+      <li>How can we check?</li>
+    </ul>
+  </div>
+
+  <h2 class="heading">Risk Management: What could go wrong?</h2>
+
+  <p>Risk management means understanding what could go wrong and preparing for it. For each risk, ask two questions: <strong>How likely is it?</strong> and <strong>How serious would it be?</strong></p>
+
+  <table class="risk-table">
+    <thead>
+      <tr>
+        <th>Risk</th>
+        <th>Likelihood</th>
+        <th>Seriousness</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>No driver available for daily pickups</td>
+        <td><span class="badge badge-high">High</span></td>
+        <td><span class="badge badge-high">High</span></td>
+      </tr>
+      <tr>
+        <td>Some food is already too old to use</td>
+        <td><span class="badge badge-medium">Medium</span></td>
+        <td><span class="badge badge-medium">Medium</span></td>
+      </tr>
+      <tr>
+        <td>The kitchen fridge is too small for the extra food</td>
+        <td><span class="badge badge-medium">Medium</span></td>
+        <td><span class="badge badge-high">High</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>Once you have assessed each risk, choose a response:</p>
+
+  <ul class="response-list">
+    <li><strong>Prevent it.</strong> Change the plan so the risk is less likely to occur. &ldquo;Start with two pickups per week, not seven.&rdquo;</li>
+    <li><strong>Prepare for it.</strong> Have a plan ready if it happens. &ldquo;Ask a local volunteer group to be a backup for drivers.&rdquo;</li>
+    <li><strong>Accept it.</strong> If the risk is small enough, move forward &mdash; but cautiously.</li>
+  </ul>
+
+  <div class="key-concept">
+    <p>No matter how well you plan, you will never fully avoid risk. A social enterprise that never takes risks will find it very difficult to create real change. The aim is always to take risks with your eyes open.</p>
+  </div>
+
+  <h2 class="heading">Adaptability: Changing the plan, keeping the goal</h2>
+
+  <div class="scenario-image-row">
+    <div class="scenario-box scenario-image-row__text">
+      <div class="scenario-label">A change of plan</div>
+      <p>The team checks the facts and decides to start small: two pickups a week. Everything runs smoothly &mdash; until a month later, when the supermarket says it can only give away half as much food as before.</p>
+      <p>They could feel let down. But the goal was never &ldquo;get food from this supermarket.&rdquo; It was &ldquo;get good food to people who need it.&rdquo; With this in mind, they change the method: they recruit two smaller grocery shops to fill the gap.</p>
+    </div>
+    <div class="scenario-image-row__img">
+      <img src="../../assets/img/sharedtable-driver.jpg" alt="A delivery driver learns the supermarket has cut its food donation in half" />
+    </div>
+  </div>
+
+  <p>This is adaptability: changing your plan when conditions change, while never losing sight of your goal. It is not the same as giving up, and it is not the same as changing your mind every day.</p>
+
+  <p>Adaptability is also one of those competences you will often combine with others. Assessing a new risk? Adapt your plan. Working with a new team? Adapt your approach. As you saw in Section 1, your ability to use any competence rises and falls. You may find it easy to adapt in one situation and harder in another &mdash; that is completely normal.</p>
+
+  <hr class="divider">
+
+  <div class="assessment-header">
+    <h2>Assessment &mdash; Your Turn</h2>
+  </div>
+  <div class="assessment-body">
+
+    <h3>Activity: Fact, assumption or opinion?</h3>
+    <p>Match each statement to its type.</p>
+
+    <table class="match-table">
+      <thead>
+        <tr>
+          <th>Statement</th>
+          <th>Type</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>The supermarket sent a list showing 40kg of unsold food last week.</td>
+          <td>Fact</td>
+        </tr>
+        <tr>
+          <td>The kitchen will be able to use all the extra food.</td>
+          <td>Assumption</td>
+        </tr>
+        <tr>
+          <td>If we don&rsquo;t take this offer, we will never get another chance.</td>
+          <td>Opinion</td>
+        </tr>
+        <tr>
+          <td>The kitchen is open five days a week.</td>
+          <td>Fact</td>
+        </tr>
+        <tr>
+          <td>It will be easy to find volunteer drivers.</td>
+          <td>Assumption</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Multiple choice</h3>
+
+    <p><strong>1.</strong> The team decides to start with two pickups per week instead of five. Which competence does this best demonstrate?</p>
+    <ul class="mc-list">
+      <li data-label="a)">Critical thinking</li>
+      <li data-label="b)">Resilience</li>
+      <li data-label="c)">Risk management</li>
+      <li data-label="d)">Passion</li>
+    </ul>
+    <p class="answer-note">Answer: c)</p>
+
+    <p><strong>2.</strong> When the supermarket reduces its donations, the team recruits two smaller shops instead. Which competence does this best show?</p>
+    <ul class="mc-list">
+      <li data-label="a)">Negotiation</li>
+      <li data-label="b)">Adaptability</li>
+      <li data-label="c)">Critical thinking</li>
+      <li data-label="d)">Empathy</li>
+    </ul>
+    <p class="answer-note">Answer: b)</p>
+
+    <p><strong>3.</strong> Mira says, &ldquo;If we don&rsquo;t take this offer now, we will never get another chance.&rdquo; How should the team treat this statement?</p>
+    <ul class="mc-list">
+      <li data-label="a)">As a fact &mdash; she is probably right</li>
+      <li data-label="b)">As an assumption &mdash; it needs to be verified</li>
+      <li data-label="c)">As an opinion &mdash; it reflects a personal view, not a verified reality</li>
+      <li data-label="d)">As a risk &mdash; it should be added to the risk table</li>
+    </ul>
+    <p class="answer-note">Answer: c)</p>
+
+  </div>
+
+</div>
+
+</body>
+</html>
